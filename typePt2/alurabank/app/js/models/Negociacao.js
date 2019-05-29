@@ -1,19 +1,21 @@
-class Negociacao {
-    constructor(_data, _qtde, _valor) {
-        this._data = _data;
-        this._qtde = _qtde;
-        this._valor = _valor;
-    }
-    get data() {
-        return this._data;
-    }
-    get qtde() {
-        return this._qtde;
-    }
-    get valor() {
-        return this._valor;
-    }
-    get volume() {
-        return this._qtde * this._valor;
-    }
-}
+System.register([], function (exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var Negociacao;
+    return {
+        setters: [],
+        execute: function () {
+            Negociacao = class Negociacao {
+                constructor(data, qtde, valor) {
+                    this.data = data;
+                    this.qtde = qtde;
+                    this.valor = valor;
+                }
+                get volume() {
+                    return this.qtde * this.valor;
+                }
+            };
+            exports_1("Negociacao", Negociacao);
+        }
+    };
+});

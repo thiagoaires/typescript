@@ -1,23 +1,11 @@
-class Negociacao {
+export class Negociacao {
   constructor(
-    private _data: Date,
-    private _qtde: number,
-    private _valor: number
+    readonly data: Date,
+    readonly qtde: number,
+    readonly valor: number
   ) {}
 
-  get data() {
-    return this._data;
-  }
-
-  get qtde() {
-    return this._qtde;
-  }
-
-  get valor() {
-    return this._valor;
-  }
-
   get volume() {
-    return this._qtde * this._valor;
+    return this.qtde * this.valor;
   }
 }
