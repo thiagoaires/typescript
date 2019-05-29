@@ -1,14 +1,12 @@
-declare var $: any;
-
 abstract class View<T> {
-  private _element: JQuery;
+  private _element: Element;
 
   constructor(selector: string) {
-    this._element = $(selector);
+    this._element = document.querySelector(selector);
   }
 
   update(model: T): void {
-    this._element.html(this.template(model));
+    this._element.innerHTML = this.template(model);
   }
 
   abstract template(model: T): string;
