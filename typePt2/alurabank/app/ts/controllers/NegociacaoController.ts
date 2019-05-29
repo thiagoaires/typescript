@@ -1,5 +1,6 @@
 import { Negociacoes, Negociacao } from "../models/index";
 import { MensagemView, NegociacoesView } from "../views/index";
+import { logarTempoDeExecucao } from "../helpers/decorators/logarTempoDeExecucao";
 
 export class NegociacaoController {
   private _inputData: HTMLInputElement;
@@ -15,7 +16,7 @@ export class NegociacaoController {
     this._inputValor = <HTMLInputElement>document.querySelector("#valor");
     this._negociacoesView.update(this._negociacoes);
   }
-
+  @logarTempoDeExecucao()
   adiciona(e: Event) {
     e.preventDefault();
 
